@@ -3,5 +3,5 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/TicTacToe/', // Replace with your repository name
+  base: process.env.NODE_ENV === 'production' ? '/TicTacToe/' : '/', // Use repository name for production
 });

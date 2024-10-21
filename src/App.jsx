@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function App() {
-  const [tttArray, setTttArray] = useState([
+  const initialTttArray = [
     { imgSrcNmbr: 3 },
     { imgSrcNmbr: 3 },
     { imgSrcNmbr: 3 },
@@ -11,7 +11,9 @@ function App() {
     { imgSrcNmbr: 3 },
     { imgSrcNmbr: 3 },
     { imgSrcNmbr: 3 },
-  ]);
+  ];
+
+  const [tttArray, setTttArray] = useState(initialTttArray);
   const [turn, setTurn] = useState(false);
   const [winner, setWinner] = useState(null);
   const [winnerMsg, setWinnerMsg] = useState("Can you win this?");
@@ -127,23 +129,21 @@ function App() {
     }
   };
 
+  const resetGame = () => {
+    setTttArray(initialTttArray);
+    setTurn(false);
+    setWinner(null);
+    setWinnerMsg("Can you win this?");
+    setTurnMsg("It's your turn");
+  };
+
   return (
     <>
       <div className="container bg-gradient-to-b from-slate-700 to-slate-300 to-90% h-[650px] w-[310px] mx-auto rounded-md mt-2 flex flex-col">
         <div className="headerContainer w-[310px] h-28 flex mx-auto mt-8 flex-col justify-center items-center">
           <h1 className="text-5xl font-semibold text-slate-200">Tic Tac Toe</h1>
-          <h1 className=" font-thin text-white mt-2 flex gap-1">
-            <h6>You are</h6>
-            (<img src="/images/1.svg" className="w-3 h-auto" alt="" />)
-            <h6 className="ml-2">I'm </h6>
-            (
-            <img
-              className="w-3 h-auto"
-              src="/images/2.svg"
-              alt=""
-              // style={{ strokeWidth: 8}}
-            />
-            )
+          <h1 className=" font-thin text-white mt-2">
+            Can you beat me? Let&apos;s see!
           </h1>
         </div>
         <div className="mainContainer  w-[310px] h-[30rem] flex flex-col mx-auto">
@@ -261,6 +261,14 @@ function App() {
               {winnerMsg || "No winner yet"}
             </h1>
           </div>
+        </div>
+        <div className="reset h-10 flex justify-center items-center m-1">
+          <button
+            className=" bg-slate-400 h-8 w-16 font-semibold text-lg rounded-lg text-slate-800 "
+            onClick={resetGame}
+          >
+            Reset
+          </button>
         </div>
         <div className="footerContainer text-slate-200 text-center h-12 w-72 mx-auto flex flex-col justify-center items-center">
           <div className="copyright  text-slate-600 text-center h-14 w-72 mx-auto mt-2 flex flex-col">
