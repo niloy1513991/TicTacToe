@@ -137,6 +137,12 @@ function App() {
     setTurnMsg("It's your turn");
   };
 
+  const getImagePath = (imgSrcNmbr) => {
+    return process.env.NODE_ENV === "production"
+      ? `/TicTacToe/images/${imgSrcNmbr}.svg`
+      : `/images/${imgSrcNmbr}.svg`;
+  };
+
   return (
     <>
       <div className="container bg-gradient-to-b from-slate-700 to-slate-300 to-90% h-[650px] w-[310px] mx-auto rounded-md mt-2 flex flex-col">
@@ -157,7 +163,7 @@ function App() {
                 onClick={() => handleClick(0)}
               >
                 <img
-                  src={`/images/${tttArray[0].imgSrcNmbr}.svg`}
+                  src={getImagePath(tttArray[0].imgSrcNmbr)}
                   alt=""
                   className="h-16 w-auto"
                 />
@@ -168,7 +174,7 @@ function App() {
                 onClick={() => handleClick(1)}
               >
                 <img
-                  src={`/images/${tttArray[1].imgSrcNmbr}.svg`}
+                  src={getImagePath(tttArray[1].imgSrcNmbr)}
                   alt=""
                   className="h-16 w-auto"
                 />
@@ -179,7 +185,7 @@ function App() {
                 onClick={() => handleClick(2)}
               >
                 <img
-                  src={`/images/${tttArray[2].imgSrcNmbr}.svg`}
+                  src={getImagePath(tttArray[2].imgSrcNmbr)}
                   alt=""
                   className="h-16 w-auto"
                 />
@@ -192,7 +198,7 @@ function App() {
                 onClick={() => handleClick(3)}
               >
                 <img
-                  src={`/images/${tttArray[3].imgSrcNmbr}.svg`}
+                  src={getImagePath(tttArray[3].imgSrcNmbr)}
                   alt=""
                   className="h-16 w-auto"
                 />
@@ -203,7 +209,7 @@ function App() {
                 onClick={() => handleClick(4)}
               >
                 <img
-                  src={`/images/${tttArray[4].imgSrcNmbr}.svg`}
+                  src={getImagePath(tttArray[4].imgSrcNmbr)}
                   alt=""
                   className="h-16 w-auto"
                 />
@@ -214,7 +220,7 @@ function App() {
                 onClick={() => handleClick(5)}
               >
                 <img
-                  src={`/images/${tttArray[5].imgSrcNmbr}.svg`}
+                  src={getImagePath(tttArray[5].imgSrcNmbr)}
                   alt=""
                   className="h-16 w-auto"
                 />
@@ -227,7 +233,7 @@ function App() {
                 onClick={() => handleClick(6)}
               >
                 <img
-                  src={`/images/${tttArray[6].imgSrcNmbr}.svg`}
+                  src={getImagePath(tttArray[6].imgSrcNmbr)}
                   alt=""
                   className="h-16 w-auto"
                 />
@@ -238,7 +244,7 @@ function App() {
                 onClick={() => handleClick(7)}
               >
                 <img
-                  src={`/images/${tttArray[7].imgSrcNmbr}.svg`}
+                  src={getImagePath(tttArray[7].imgSrcNmbr)}
                   alt=""
                   className="h-16 w-auto"
                 />
@@ -249,7 +255,7 @@ function App() {
                 onClick={() => handleClick(8)}
               >
                 <img
-                  src={`/images/${tttArray[8].imgSrcNmbr}.svg`}
+                  src={getImagePath(tttArray[8].imgSrcNmbr)}
                   alt=""
                   className="h-16 w-auto"
                 />
